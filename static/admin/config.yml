@@ -7,6 +7,7 @@ public_folder: /uploads
 
 collections:
   - name: 'logo'
+    identifier_field: 'logo'
     label: 'Logo'
     description: 'Change the homepage logo'
     format: 'json'

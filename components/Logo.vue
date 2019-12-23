@@ -122,22 +122,16 @@ export default {
   components: {},
   data() {
     return {
-      drawLogo: false,
-      logo1: false
+      drawLogo: false
     }
   },
   computed: {
-    logoSvgCode() {
+    logoPaths() {
       return this.$store.getters.getLogoSvgCode
     }
   },
   mounted() {
     this.drawLogo = true
-    this.logo1
-      ? (document.querySelector(
-          '.logoDiv'
-        ).innerHTML = this.$store.getters.getLogoSvgCode)
-      : (document.querySelector('.logoDiv').innerHTML = '')
   }
 }
 </script>

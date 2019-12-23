@@ -7,18 +7,18 @@ public_folder: /uploads
 
 collections:
   - name: 'logo'
-    identifier_field: 'svg'
-    label: 'Logo SVG code'
-    description: 'Change the homepage logo (svg code only)'
+    identifier_field: 'path'
+    label: 'Logo path
+    description: 'Add a path to the homepage logo'
     format: 'json'
     folder: 'assets/content/logo'
-    create: false
-    delete: false
-    slug: 'logo-{{year}}-{{month}}-{{day}}'
+    create: true
+    delete: true
+    slug: 'logo-{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Logo Image SVG Code', name: 'svg', widget: 'text' }
+      - { label: 'Logo Image SVG Code', name: 'path', widget: 'text' }
 
   - name: 'blog'
     label: 'Blog'

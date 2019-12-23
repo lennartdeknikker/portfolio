@@ -12,7 +12,7 @@ collections:
     description: 'Change the homepage logo (svg code only)'
     format: 'json'
     folder: 'assets/content/logo'
-    create: false
+    create: true
     delete: false
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:

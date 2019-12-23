@@ -17,7 +17,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Logo Image', name: 'logo', widget: 'image' }
+      - { label: 'Logo Image', name: 'logoUrl', widget: 'image' }
   - name: 'blog'
     label: 'Blog'
     format: 'json'

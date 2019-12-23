@@ -1,12 +1,12 @@
 export default {
   async nuxtServerInit({ commit }) {
-    const logoFile = await require.context(
+    const svgCode = await require.context(
       '~/assets/content/logo/',
       false,
       /\.json$/
     )
-    const logo = logoFile.keys().map((key) => {
-      const res = logoFile(key)
+    const logo = svgCode.keys().map((key) => {
+      const res = svgCode(key)
       res.slug = key.slice(2, -5)
       return res
     })

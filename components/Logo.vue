@@ -1,6 +1,6 @@
 <template>
   <div class="logo-container">
-    <img :src="logoUrl" class="logo" alt="" />
+    {{ logoSvgCode }}
   </div>
 </template>
 
@@ -15,8 +15,8 @@ export default {
   },
   components: {},
   computed: {
-    logoUrl() {
-      return this.$store.getters.getLogoUrl
+    logoSvgCode() {
+      return this.$store.getters.getLogoSvgCode
     }
   }
 }

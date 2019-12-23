@@ -14,7 +14,7 @@ collections:
     folder: 'assets/content/logo'
     create: true
     delete: false
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: 'logo-{{year}}-{{month}}-{{day}}'
     editor:
       preview: false
     fields:

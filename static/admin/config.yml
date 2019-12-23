@@ -13,7 +13,9 @@ collections:
     format: 'json'
     folder: 'assets/content/logo'
     create: false
+    delete: false
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    pattern: ['.*\.svg', 'Must be an svg file']
     editor:
       preview: false
     fields:

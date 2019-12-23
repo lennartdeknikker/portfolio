@@ -8,7 +8,7 @@ public_folder: /uploads
 collections:
   - name: 'logo'
     identifier_field: 'path'
-    label: 'Logo path
+    label: 'Logo path'
     description: 'Add a path to the homepage logo'
     format: 'json'
     folder: 'assets/content/logo'

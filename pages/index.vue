@@ -1,6 +1,8 @@
 <template>
   <div>
-    <logo />
+    <div class="logo-container">
+      <logo />
+    </div>
   </div>
 </template>
 
@@ -21,7 +23,8 @@ export default {
 </script>
 
 <style>
-logo {
+.logo-container {
   width: 100%;
+  height: 100vh;
 }
 </style>

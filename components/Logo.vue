@@ -1,31 +1,21 @@
 <template>
-  <div class="logo-container">
-    <transition-group
-      id="Layer_1"
-      tag="svg"
-      version="1.1"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      width="300px"
-      height="300px"
-      view-box="0 0 300 300"
-      style="enable-background:new 0 0 300 300;"
-      xml:space="preserve"
-      name="draw-logo-1"
-    >
-      <g key="logo" v-if="drawLogo" class="red">
-        <path
-          v-for="path in logoPaths"
-          :key="path.title"
-          :d="path.path"
-          stroke="#2AA198"
-          fill="transparent"
-          class="red"
-        ></path>
-      </g>
-    </transition-group>
-  </div>
+  <transition-group
+    class="logo"
+    tag="svg"
+    name="draw-logo-1"
+    viewbox="0 0 300 300"
+  >
+    <g key="logo" v-if="drawLogo" class="red">
+      <path
+        v-for="path in logoPaths"
+        :key="path.title"
+        :d="path.path"
+        stroke="#2AA198"
+        fill="transparent"
+        class="red"
+      ></path>
+    </g>
+  </transition-group>
 </template>
 
 <script>
@@ -55,10 +45,18 @@ export default {
 </script>
 
 <style scoped>
+.logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .draw-logo-1-enter-active {
   stroke-dasharray: 2075;
   stroke-dashoffset: 0;
-  animation: dash-red 1.5s ease 1;
+  animation: dash-red 1.5s ease;
 }
 @keyframes dash-red {
   from {

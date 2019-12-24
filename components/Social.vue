@@ -2,6 +2,9 @@
   <div class="social-container">
     <a href="https://github.com/lennartdeknikker"
       ><svg
+        @mouseover="hover = 'github'"
+        @mouseleave="hover = ''"
+        :class="{ active: hover == 'github' }"
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -13,6 +16,9 @@
     ></a>
     <a href="https://www.linkedin.com/in/lennartdeknikker/"
       ><svg
+        @mouseover="hover = 'linkedIn'"
+        @mouseleave="hover = ''"
+        :class="{ active: hover == 'linkedIn' }"
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -30,6 +36,9 @@
     ></a>
     <a href="https://twitter.com/lennart_de_k"
       ><svg
+        @mouseover="hover = 'twitter'"
+        @mouseleave="hover = ''"
+        :class="{ active: hover == 'twitter' }"
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -41,6 +50,9 @@
     ></a>
     <a href="https://www.facebook.com/lennARTwebDevelopment"
       ><svg
+        @mouseover="hover = 'facebook'"
+        @mouseleave="hover = ''"
+        :class="{ active: hover == 'facebook' }"
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -52,6 +64,9 @@
     ></a>
     <a href="mailto:me@lenn4rt.com"
       ><svg
+        @mouseover="hover = 'mail'"
+        @mouseleave="hover = ''"
+        :class="{ active: hover == 'mail' }"
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -67,16 +82,31 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      hover: ''
+    }
+  }
+}
+</script>
+
 <style scoped>
 .icon {
   width: 2em;
   margin: 0 0.1em;
   fill: white;
+  transition: transform 2s;
 }
 
 .social-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.active {
+  transform: rotate(360deg);
 }
 
 @media (max-width: 800px) {

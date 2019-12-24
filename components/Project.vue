@@ -1,5 +1,5 @@
 <template>
-  <article class="portfolio-item">
+  <article :class="{ clicked: !clicked }" class="portfolio-item">
     <div class="thumbnail-container">
       <img
         class="thumbnail"
@@ -8,28 +8,47 @@
       />
     </div>
     <h2 class="item-title">Pointer</h2>
-    <p class="item-text">
+    <p v-if="clicked" class="item-text">
       A project to visualize data about health care institutions that seem to
       make too much revenue.
     </p>
-    <button class="button-expand">
-      <svg viewBox="0 0 30 20" class="button-expand-triangle">
+    <button @click="clicked = !clicked" class="button-expand">
+      <svg
+        :class="{ up: clicked }"
+        viewBox="0 0 30 20"
+        class="button-expand-triangle"
+      >
         <polygon points="0,0 15,20 30,0" />
       </svg>
     </button>
   </article>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      clicked: false
+    }
+  }
+}
+</script>
+
 <style scoped>
 .portfolio-item {
   max-width: 21rem;
   width: 100%;
-  height: 100%;
   background-color: #2aa198;
   border: 1px solid #2aa198;
   display: grid;
   grid-template-areas: 'thumbnail' 'title' 'item-text' 'button';
-  grid-template-rows: 14fr 3fr 7fr 2rem;
+  grid-template-rows: 21rem 5rem 16rem 5rem;
+  height: fit-content;
+  transition: all ease 2s;
+}
+
+.clicked {
+  grid-template-rows: 21rem 5rem 0 5rem;
 }
 
 .thumbnail-container {
@@ -79,5 +98,9 @@
 .button-expand-triangle {
   fill: #2aa198;
   height: 100%;
+}
+
+.up {
+  transform: rotate(180deg);
 }
 </style>

@@ -34,3 +34,17 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
+
+  - name: 'blog'
+    label: 'Blog'
+    format: 'json'
+    folder: 'assets/content/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

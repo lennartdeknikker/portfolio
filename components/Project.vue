@@ -1,16 +1,13 @@
 <template>
   <article :class="{ clicked: !clicked }" class="portfolio-item">
     <div class="thumbnail-container">
-      <img
-        class="thumbnail"
-        src="../assets/content/dummy-img/l5.jpeg"
-        alt="portfolio-item"
-      />
+      <a :href="project.link">
+        <img :src="project.image" class="thumbnail" alt="portfolio-item"
+      /></a>
     </div>
-    <h2 @click="clicked = !clicked" class="item-title">Pointer</h2>
+    <h2 @click="clicked = !clicked" class="item-title">{{ project.title }}</h2>
     <p v-if="clicked" @click="clicked = !clicked" class="item-text">
-      A project to visualize data about health care institutions that seem to
-      make too much revenue.
+      {{ project.description }}
     </p>
     <button @click="clicked = !clicked" class="button-expand">
       <svg
@@ -26,6 +23,12 @@
 
 <script>
 export default {
+  props: {
+    project: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       clicked: false

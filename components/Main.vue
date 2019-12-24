@@ -2,11 +2,11 @@
   <div class="main-container">
     <h1 class="title">LATEST PROJECTS</h1>
     <section class="projects-container">
-      <project />
-      <project />
-      <project />
-      <project />
-      <project />
+      <project
+        v-for="project in projects"
+        :key="project.title"
+        :project="project"
+      />
     </section>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
   },
   data() {
     return {}
+  },
+  computed: {
+    projects() {
+      return this.$store.getters.getProjects
+    }
   },
   methods: {}
 }

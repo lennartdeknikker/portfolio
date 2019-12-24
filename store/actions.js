@@ -1,5 +1,6 @@
 export default {
   async nuxtServerInit({ commit }) {
+    // logo data
     const svgCode = await require.context(
       '~/assets/content/logo/',
       false,
@@ -10,6 +11,7 @@ export default {
       res.slug = key.slice(2, -5)
       return res
     })
+    // blog data
     const files = await require.context(
       '~/assets/content/blog/',
       false,
@@ -20,8 +22,20 @@ export default {
       res.slug = key.slice(2, -5)
       return res
     })
+    // project data
+    const projectFiles = await require.context(
+      '~/assets/content/projects/',
+      false,
+      /\.json$/
+    )
+    const projects = projectFiles.keys().map((key) => {
+      const res = projectFiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
 
     await commit('setBlogPosts', blogPosts)
     await commit('setLogo', logo)
+    await commit('setProjects', projects)
   }
 }

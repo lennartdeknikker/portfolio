@@ -7,8 +7,8 @@
         alt="portfolio-item"
       />
     </div>
-    <h2 class="item-title">Pointer</h2>
-    <p v-if="clicked" class="item-text">
+    <h2 @click="clicked = !clicked" class="item-title">Pointer</h2>
+    <p v-if="clicked" @click="clicked = !clicked" class="item-text">
       A project to visualize data about health care institutions that seem to
       make too much revenue.
     </p>
@@ -42,13 +42,12 @@ export default {
   border: 1px solid #2aa198;
   display: grid;
   grid-template-areas: 'thumbnail' 'title' 'item-text' 'button';
-  grid-template-rows: 21rem 5rem 16rem 5rem;
+  grid-template-rows: 21rem 5rem 16rem 2rem;
   height: fit-content;
-  transition: all ease 2s;
 }
 
 .clicked {
-  grid-template-rows: 21rem 5rem 0 5rem;
+  grid-template-rows: 21rem 5rem 0 2rem;
 }
 
 .thumbnail-container {
@@ -98,6 +97,7 @@ export default {
 .button-expand-triangle {
   fill: #2aa198;
   height: 100%;
+  transition: transform ease 0.2s;
 }
 
 .up {

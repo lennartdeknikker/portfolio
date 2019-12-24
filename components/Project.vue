@@ -45,13 +45,13 @@ export default {
   border: 1px solid #2aa198;
   display: grid;
   grid-template-areas: 'thumbnail' 'title' 'item-text' 'button';
-  grid-template-rows: 21rem 5rem 16rem 2rem;
+  grid-template-rows: 14rem 5rem 10rem 2rem;
   height: fit-content;
   margin-block-end: 3rem;
 }
 
 .clicked {
-  grid-template-rows: 21rem 5rem 0 2rem;
+  grid-template-rows: 14rem 5rem 0 2rem;
 }
 
 .thumbnail-container {

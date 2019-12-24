@@ -1,5 +1,4 @@
 export default () => ({
   logoSvgCode: [],
-  projects: [],
-  blogPosts: []
+  projects: []
 })

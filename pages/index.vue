@@ -1,13 +1,18 @@
 <template>
   <div>
-    <div class="logo-container">
-      <logo />
+    <div v-if="logo" class="logo-container">
+      <Logo />
     </div>
+    <Main v-if="main" />
+    <Footer v-if="footer" />
   </div>
 </template>
 
 <script>
 import Logo from '../components/Logo.vue'
+import Footer from '../components/Footer.vue'
+import Main from '../components/Main.vue'
+
 export default {
   head() {
     return {
@@ -17,7 +22,16 @@ export default {
     }
   },
   components: {
-    Logo
+    Logo,
+    Footer,
+    Main
+  },
+  data() {
+    return {
+      logo: false,
+      main: true,
+      footer: true
+    }
   }
 }
 </script>
@@ -26,5 +40,6 @@ export default {
 .logo-container {
   width: 100%;
   height: 100vh;
+  background-color: #2aa198;
 }
 </style>

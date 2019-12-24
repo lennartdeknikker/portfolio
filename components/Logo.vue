@@ -10,7 +10,7 @@
         v-for="path in logoPaths"
         :key="path.title"
         :d="path.path"
-        stroke="#2AA198"
+        stroke="white"
         fill="transparent"
         class="red"
       ></path>
@@ -54,15 +54,23 @@ export default {
 }
 
 .draw-logo-1-enter-active {
+  fill: white;
   stroke-dasharray: 2075;
   stroke-dashoffset: 0;
-  animation: dash-red 1.5s ease;
+  animation: dash-red 1.5s ease 1;
 }
+
+.draw-logo-1-enter-to {
+  fill: #2aa198;
+}
+
 @keyframes dash-red {
   from {
+    fill: white;
     stroke-dashoffset: -2075;
   }
   to {
+    fill: #2aa198;
     stroke-dashoffset: 0;
   }
 }

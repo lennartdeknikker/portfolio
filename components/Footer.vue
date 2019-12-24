@@ -6,12 +6,13 @@
     <a href="#" class="footer-link-terms"
       ><small class="footer-text-terms">Terms & Conditions</small></a
     >
-    <social class="social" />
+    <Social class="social" />
   </footer>
 </template>
 
 <script>
 import Social from '../components/social.vue'
+
 export default {
   components: {
     Social

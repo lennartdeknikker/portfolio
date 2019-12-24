@@ -44,6 +44,7 @@ export default {
   grid-template-areas: 'thumbnail' 'title' 'item-text' 'button';
   grid-template-rows: 21rem 5rem 16rem 2rem;
   height: fit-content;
+  margin-block-end: 3rem;
 }
 
 .clicked {
@@ -97,7 +98,7 @@ export default {
 .button-expand-triangle {
   fill: #2aa198;
   height: 100%;
-  transition: transform ease 0.2s;
+  transition: transform ease 0.3s;
 }
 
 .up {

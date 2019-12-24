@@ -1,15 +1,44 @@
 <template>
-  <div>
-    <h1>Latest Projects</h1>
-    <section>
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
-        <div>
-          <button>V</button>
-        </div>
-      </article>
+  <div class="main-container">
+    <h1 class="title">LATEST PROJECTS</h1>
+    <section class="projects-container">
+      <project />
+      <project />
+      <project />
     </section>
   </div>
 </template>
+
+<script>
+import Project from '../components/Project.vue'
+
+export default {
+  components: {
+    Project
+  }
+}
+</script>
+
+<style scoped>
+.main-container {
+  height: 100%;
+}
+
+.title {
+  font-family: 'Advent Pro', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2aa198;
+  height: 15%;
+  font-weight: 300;
+}
+
+.projects-container {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem 3rem;
+}
+</style>

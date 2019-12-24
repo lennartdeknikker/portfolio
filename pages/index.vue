@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <div v-if="logo" class="logo-container">
-      <Logo />
-    </div>
-    <Main v-if="main" />
+  <div class="container">
+    <transition name="slide-in">
+      <Main v-if="main" />
+    </transition>
+    <transition @leave="showMain" name="slide-out">
+      <Logo v-if="logo" @show-main="logo = false" />
+    </transition>
     <Footer v-if="footer" />
   </div>
 </template>
@@ -28,18 +30,39 @@ export default {
   },
   data() {
     return {
-      logo: false,
-      main: true,
+      logo: true,
+      main: false,
       footer: true
+    }
+  },
+  methods: {
+    showMain() {
+      setTimeout(() => {
+        this.main = true
+      }, 800)
     }
   }
 }
 </script>
 
 <style>
-.logo-container {
-  width: 100%;
+.container {
   height: 100vh;
-  background-color: #2aa198;
+}
+
+.slide-out-leave-active {
+  transform: translateY(0);
+  transition: all 0.8s linear;
+}
+.slide-out-leave-to {
+  transform: translateY(100%);
+}
+
+.slide-in-enter-active {
+  transform: translateY(-100%);
+  transition: all 0.8s ease;
+}
+.slide-in-enter-to {
+  transform: translateY(0);
 }
 </style>

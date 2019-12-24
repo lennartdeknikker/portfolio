@@ -1,21 +1,24 @@
 <template>
-  <transition-group
-    class="logo"
-    tag="svg"
-    name="draw-logo-1"
-    viewbox="0 0 300 300"
-  >
-    <g key="logo" v-if="drawLogo" class="red">
-      <path
-        v-for="path in logoPaths"
-        :key="path.title"
-        :d="path.path"
-        stroke="white"
-        fill="transparent"
-        class="red"
-      ></path>
-    </g>
-  </transition-group>
+  <div class="logo-container">
+    <transition-group
+      @after-enter="$emit('show-main')"
+      class="logo"
+      tag="svg"
+      name="draw-logo"
+      viewbox="0 0 300 300"
+    >
+      <g key="logo" v-if="drawLogo" class="red">
+        <path
+          v-for="path in logoPaths"
+          :key="path.title"
+          :d="path.path"
+          stroke="white"
+          fill="transparent"
+          class="red"
+        ></path>
+      </g>
+    </transition-group>
+  </div>
 </template>
 
 <script>
@@ -45,32 +48,35 @@ export default {
 </script>
 
 <style scoped>
-.logo {
+.logo-container {
   width: 100%;
   height: 100%;
+  background-color: #2aa198;
+}
+
+.logo {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
-.draw-logo-1-enter-active {
-  fill: white;
+.draw-logo-enter-active {
   stroke-dasharray: 2075;
   stroke-dashoffset: 0;
-  animation: dash-red 1.5s ease 1;
+  animation: dash 2s ease;
 }
-
-.draw-logo-1-enter-to {
+/* may be necessary when logo stays on and main slides in.
+.draw-logo-enter-to {
   fill: #2aa198;
-}
+} */
 
-@keyframes dash-red {
+@keyframes dash {
   from {
-    fill: white;
     stroke-dashoffset: -2075;
   }
-  to {
-    fill: #2aa198;
+  75% {
     stroke-dashoffset: 0;
   }
 }

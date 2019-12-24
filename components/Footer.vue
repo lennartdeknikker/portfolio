@@ -29,11 +29,10 @@ a {
 .footer-text-terms {
   color: white;
   font-family: 'Advent Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 1rem;
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .footer-text-copyright {
@@ -43,6 +42,7 @@ a {
 .footer-text-terms {
   grid-area: terms;
   justify-content: center;
+  height: 100%;
 }
 
 .footer-link-terms {
@@ -57,11 +57,10 @@ a {
 
 .footer {
   display: grid;
-  height: 3rem;
   background-color: #2aa198;
-  padding: 0 3em;
+  padding: 0 3rem;
   grid-template-areas: 'copyright terms social';
   grid-template-columns: 1fr 1fr 1fr;
-  margin-block-start: 1rem;
+  height: 3rem;
 }
 </style>

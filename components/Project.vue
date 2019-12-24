@@ -22,7 +22,7 @@
 
 <style scoped>
 .portfolio-item {
-  width: 30%;
+  width: 15rem;
   height: 100%;
   background-color: #2aa198;
   border: 1px solid #2aa198;
@@ -34,10 +34,12 @@
 .thumbnail-container {
   grid-area: thumbnail;
   overflow: hidden;
+  width: 100%;
 }
 
 .thumbnail {
   width: 100%;
+  overflow: hidden;
   object-fit: cover;
   object-position: 50% 50%;
 }

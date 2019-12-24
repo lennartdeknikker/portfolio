@@ -38,12 +38,14 @@ a {
 
 .footer-text-copyright {
   grid-area: copyright;
+  min-width: 300px;
 }
 
 .footer-text-terms {
   grid-area: terms;
   justify-content: center;
   height: 100%;
+  min-width: 120px;
 }
 
 .footer-link-terms {
@@ -63,5 +65,22 @@ a {
   grid-template-areas: 'copyright terms social';
   grid-template-columns: 1fr 1fr 1fr;
   height: 3rem;
+  min-width: 300px;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    grid-template-areas: 'copyright' 'terms' 'social';
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    height: 10rem;
+  }
+
+  .footer-text-copyright,
+  .social {
+    justify-content: center;
+    text-align: center;
+    min-width: 200px;
+  }
 }
 </style>

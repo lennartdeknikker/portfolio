@@ -5,6 +5,10 @@
       <project />
       <project />
       <project />
+      <project />
+      <project />
+      <project />
+      <project />
     </section>
   </div>
 </template>
@@ -22,6 +26,8 @@ export default {
 <style scoped>
 .main-container {
   height: 100%;
+  overflow-y: scroll;
+  min-width: 300px;
 }
 
 .title {
@@ -40,5 +46,6 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 0 3rem 3rem;
+  flex-wrap: wrap;
 }
 </style>

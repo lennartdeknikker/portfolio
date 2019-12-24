@@ -7,8 +7,6 @@
       <project />
       <project />
       <project />
-      <project />
-      <project />
     </section>
   </div>
 </template>
@@ -47,5 +45,11 @@ export default {
   justify-content: space-between;
   padding: 0 3rem 3rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .projects-container {
+    justify-content: center;
+  }
 }
 </style>

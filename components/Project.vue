@@ -22,7 +22,8 @@
 
 <style scoped>
 .portfolio-item {
-  width: 15rem;
+  max-width: 21rem;
+  width: 100%;
   height: 100%;
   background-color: #2aa198;
   border: 1px solid #2aa198;

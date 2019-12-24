@@ -78,4 +78,12 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width: 800px) {
+  .social-container {
+    justify-content: center;
+    text-align: center;
+    min-width: 200px;
+  }
+}
 </style>

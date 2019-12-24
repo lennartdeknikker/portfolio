@@ -39,7 +39,7 @@ export default {
     showMain() {
       setTimeout(() => {
         this.main = true
-      }, 800)
+      }, 100)
     }
   }
 }
@@ -52,7 +52,7 @@ export default {
 
 .slide-out-leave-active {
   transform: translateY(0);
-  transition: all 0.8s linear;
+  transition: transform 0.1s linear;
 }
 .slide-out-leave-to {
   transform: translateY(100%);
@@ -60,7 +60,7 @@ export default {
 
 .slide-in-enter-active {
   transform: translateY(-100%);
-  transition: all 0.8s ease;
+  transition: transform 0.1s ease;
 }
 .slide-in-enter-to {
   transform: translateY(0);

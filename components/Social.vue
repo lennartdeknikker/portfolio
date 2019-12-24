@@ -97,7 +97,7 @@ export default {
   width: 2em;
   margin: 0 0.1em;
   fill: white;
-  transition: transform 2s;
+  transition: transform 1s;
 }
 
 .social-container {

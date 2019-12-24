@@ -92,6 +92,7 @@ export default {
   align-items: flex-start;
   padding: 1rem;
   grid-area: button;
+  cursor: pointer;
 }
 
 .button-svg {

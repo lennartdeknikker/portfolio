@@ -1,10 +1,10 @@
 # portfolio
 
-> My astounding Nuxt.js project
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04586c97-fc45-485d-8ab3-940f6796ab7b/deploy-status)](https://app.netlify.com/sites/brave-brown-d6c044/deploys)
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
@@ -18,5 +18,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

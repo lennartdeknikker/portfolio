@@ -10,11 +10,7 @@
       {{ project.description }}
     </p>
     <button @click="clicked = !clicked" class="button-expand">
-      <svg
-        :class="{ up: clicked }"
-        viewBox="0 0 30 20"
-        class="button-expand-triangle"
-      >
+      <svg :class="{ up: clicked }" class="button-svg" viewBox="0 0 30 20">
         <polygon points="0,0 15,20 30,0" />
       </svg>
     </button>
@@ -45,23 +41,23 @@ export default {
   border: 1px solid #2aa198;
   display: grid;
   grid-template-areas: 'thumbnail' 'title' 'item-text' 'button';
-  grid-template-rows: 14rem 5rem 10rem 2rem;
+  grid-template-rows: 14rem 5rem 10rem 3rem;
   height: fit-content;
   margin-block-end: 3rem;
 }
 
 .clicked {
-  grid-template-rows: 14rem 5rem 0 2rem;
+  grid-template-rows: 14rem 5rem 0 3rem;
 }
 
 .thumbnail-container {
   grid-area: thumbnail;
-  overflow: hidden;
   width: 100%;
 }
 
 .thumbnail {
   width: 100%;
+  height: 100%;
   overflow: hidden;
   object-fit: cover;
   object-position: 50% 50%;
@@ -87,21 +83,21 @@ export default {
 }
 
 .button-expand {
-  height: 100%;
   display: flex;
   width: 100%;
+  height: 3rem;
   background-color: white;
   border: none;
   justify-content: center;
-  align-items: center;
-  padding: 0.4rem;
+  align-items: flex-start;
+  padding: 1rem;
   grid-area: button;
 }
 
-.button-expand-triangle {
+.button-svg {
   fill: #2aa198;
-  height: 100%;
-  transition: transform ease 0.3s;
+  height: 1.5rem;
+  transition: transform ease 0.5s;
 }
 
 .up {

@@ -16,7 +16,7 @@
       {{ project.description }}
     </p>
     <button @click="minimal = !minimal" class="button-expand">
-      <svg :class="{ up: minimal }" class="button-svg" viewBox="0 0 30 20">
+      <svg :class="{ up: !minimal }" class="button-svg" viewBox="0 0 30 20">
         <polygon points="0,0 15,20 30,0" />
       </svg>
     </button>
@@ -44,7 +44,7 @@ export default {
   max-width: 21rem;
   width: 100%;
   height: 80vh;
-  margin-block-end: 3rem;
+  margin-block-end: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

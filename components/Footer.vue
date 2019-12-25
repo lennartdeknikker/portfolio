@@ -1,9 +1,9 @@
 <template>
   <footer class="footer">
     <small class="footer-text-copyright"
-      >Copyright ©2019 lennART. All Rights Reserved.</small
-    >
-    <a href="#" class="footer-link-terms"
+      >©{{ year }} lennART. All Rights Reserved. | KvK: 76412741
+    </small>
+    <a href="http://lenn4rt.com/voorwaarden.pdf" class="footer-link-terms"
       ><small class="footer-text-terms">Terms & Conditions</small></a
     >
     <Social class="social" />
@@ -16,6 +16,11 @@ import Social from '../components/Social.vue'
 export default {
   components: {
     Social
+  },
+  computed: {
+    year() {
+      return new Date().getFullYear()
+    }
   }
 }
 </script>
@@ -68,7 +73,7 @@ a {
   min-width: 300px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
   .footer {
     grid-template-areas: 'copyright' 'terms' 'social';
     grid-template-rows: 1fr 1fr 1fr;

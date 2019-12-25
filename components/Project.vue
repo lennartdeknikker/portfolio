@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      minimal: false
+      minimal: true
     }
   }
 }
@@ -94,7 +94,7 @@ export default {
   overflow: hidden;
   height: auto;
   flex: 1;
-  transition: flex 1s ease;
+  transition: flex 0.2s ease;
   background-color: #2aa198;
   border: 1px solid #2aa198;
 }

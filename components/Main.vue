@@ -36,10 +36,10 @@ export default {
   overflow-y: scroll;
   min-width: 300px;
   background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 70px,
-    #2aa198 150px
+    180deg,
+    #2aa198,
+    transparent 55px,
+    transparent 160px
   );
 }
 

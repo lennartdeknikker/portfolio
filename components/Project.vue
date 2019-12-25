@@ -1,16 +1,22 @@
 <template>
-  <article :class="{ clicked: !clicked }" class="portfolio-item">
+  <article class="portfolio-item">
     <div class="thumbnail-container">
       <a :href="project.link">
         <img :src="project.image" class="thumbnail" alt="portfolio-item"
       /></a>
     </div>
-    <h2 @click="clicked = !clicked" class="item-title">{{ project.title }}</h2>
-    <p v-if="clicked" @click="clicked = !clicked" class="item-text">
+    <h2 @click="minimal = !minimal" class="item-title">
+      {{ project.title }}
+    </h2>
+    <p
+      :class="{ clicked: minimal == true }"
+      @click="minimal = !minimal"
+      class="item-text"
+    >
       {{ project.description }}
     </p>
-    <button @click="clicked = !clicked" class="button-expand">
-      <svg :class="{ up: clicked }" class="button-svg" viewBox="0 0 30 20">
+    <button @click="minimal = !minimal" class="button-expand">
+      <svg :class="{ up: minimal }" class="button-svg" viewBox="0 0 30 20">
         <polygon points="0,0 15,20 30,0" />
       </svg>
     </button>
@@ -27,7 +33,7 @@ export default {
   },
   data() {
     return {
-      clicked: false
+      minimal: false
     }
   }
 }
@@ -37,22 +43,24 @@ export default {
 .portfolio-item {
   max-width: 21rem;
   width: 100%;
-  background-color: #2aa198;
-  border: 1px solid #2aa198;
-  display: grid;
-  grid-template-areas: 'thumbnail' 'title' 'item-text' 'button';
-  grid-template-rows: 14rem 5rem 10rem 3rem;
-  height: fit-content;
+  height: 80vh;
   margin-block-end: 3rem;
-}
-
-.clicked {
-  grid-template-rows: 14rem 5rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .thumbnail-container {
-  grid-area: thumbnail;
   width: 100%;
+  overflow: hidden;
+  height: 15rem;
+  flex: 3 3 3;
+  background-color: #2aa198;
+  border: 1px solid #2aa198;
+}
+
+.item-text.clicked {
+  flex: 0;
 }
 
 .thumbnail {
@@ -71,7 +79,11 @@ export default {
   align-items: center;
   padding: 1rem 0;
   color: white;
-  grid-area: title;
+  overflow: hidden;
+  height: 3rem;
+  flex: 1 1 1;
+  background-color: #2aa198;
+  border: 1px solid #2aa198;
 }
 
 .item-text {
@@ -79,20 +91,27 @@ export default {
   color: white;
   font-size: 1.2rem;
   font-weight: 300;
-  grid-area: item-text;
+  overflow: hidden;
+  height: auto;
+  flex: 1;
+  transition: flex 1s ease;
+  background-color: #2aa198;
+  border: 1px solid #2aa198;
 }
 
 .button-expand {
   display: flex;
   width: 100%;
-  height: 3rem;
   background-color: white;
   border: none;
   justify-content: center;
   align-items: flex-start;
   padding: 1rem;
-  grid-area: button;
   cursor: pointer;
+  overflow: hidden;
+  height: 3rem;
+  flex: 1 1 1;
+  border: 1px solid #2aa198;
 }
 
 .button-svg {
@@ -103,5 +122,14 @@ export default {
 
 .up {
   transform: rotate(180deg);
+}
+
+.show-text-enter-active,
+.show-text-leave-active {
+  transition: all 0.5s;
+}
+.show-text-enter, .show-text-leave-to /* .show-text-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: scaleY(0);
 }
 </style>

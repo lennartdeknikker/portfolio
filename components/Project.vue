@@ -48,6 +48,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  --color: #2aa198;
 }
 
 .thumbnail-container {
@@ -55,8 +56,8 @@ export default {
   overflow: hidden;
   height: 15rem;
   flex: 3 3 3;
-  background-color: #2aa198;
-  border: 1px solid #2aa198;
+  background-color: var(--color);
+  border: 10px solid var(--color);
 }
 
 .item-text.clicked {
@@ -68,7 +69,7 @@ export default {
   height: 100%;
   overflow: hidden;
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: top;
 }
 
 .item-title {
@@ -82,8 +83,9 @@ export default {
   overflow: hidden;
   height: 3rem;
   flex: 1 1 1;
-  background-color: #2aa198;
-  border: 1px solid #2aa198;
+  background-color: var(--color);
+  border: 1px solid var(--color);
+  cursor: pointer;
 }
 
 .item-text {
@@ -95,8 +97,8 @@ export default {
   height: auto;
   flex: 1;
   transition: flex 0.2s ease;
-  background-color: #2aa198;
-  border: 1px solid #2aa198;
+  background-color: var(--color);
+  border: 1px solid var(--color);
 }
 
 .button-expand {
@@ -111,11 +113,11 @@ export default {
   overflow: hidden;
   height: 3rem;
   flex: 1 1 1;
-  border: 1px solid #2aa198;
+  border: 1px solid var(--color);
 }
 
 .button-svg {
-  fill: #2aa198;
+  fill: var(--color);
   height: 1.5rem;
   transition: transform ease 0.5s;
 }

@@ -35,6 +35,12 @@ export default {
   height: 100%;
   overflow-y: scroll;
   min-width: 300px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 70px,
+    #2aa198 150px
+  );
 }
 
 .title {

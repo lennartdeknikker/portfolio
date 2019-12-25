@@ -1,7 +1,7 @@
 {
   "title": "Explore Indonesia",
   "date": "2019-12-24T21:35:26.783Z",
-  "description": "This data visualisation shows Indonesian objects on a map. These objects are obtained from the collection of the 'Volkenkunde Museum'.",
+  "description": "This data visualisation shows Indonesian objects on a map. The shown objects are obtained from the collection of the 'Volkenkunde Museum'. If necessary, the application can easily be changed to show different objects from other areas as well.",
   "link": "https://volkenkunde.lenn4rt.com/",
   "image": "/uploads/volkenkunde.png"
 }

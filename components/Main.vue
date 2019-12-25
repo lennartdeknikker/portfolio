@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .main-container {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   min-width: 300px;
   background: repeating-linear-gradient(
     180deg,

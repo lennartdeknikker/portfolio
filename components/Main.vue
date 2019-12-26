@@ -38,8 +38,8 @@ export default {
   background: repeating-linear-gradient(
     180deg,
     #2aa198,
-    transparent 55px,
-    transparent 160px
+    transparent 8vh,
+    transparent 20vh
   );
 }
 

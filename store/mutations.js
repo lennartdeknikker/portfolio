@@ -3,6 +3,9 @@ export default {
     state.logoSvgCode = svgCode
   },
   setProjects(state, list) {
-    state.projects = list
+    function byDate(a, b) {
+      return new Date(b.date) - new Date(a.date)
+    }
+    state.projects = list.sort(byDate)
   }
 }

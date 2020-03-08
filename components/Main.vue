@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .main-container {
-  height: 100%;
+  height: 100vh;
   overflow-y: auto;
   min-width: 300px;
   background: repeating-linear-gradient(

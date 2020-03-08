@@ -114,6 +114,7 @@ export default {
   height: 3rem;
   flex: 1 1 1;
   border: 1px solid var(--color);
+  outline: none;
 }
 
 .button-svg {

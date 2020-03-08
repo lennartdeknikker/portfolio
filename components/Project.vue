@@ -91,7 +91,7 @@ export default {
 .item-text {
   padding: 0 1rem;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   overflow: hidden;
   height: auto;
